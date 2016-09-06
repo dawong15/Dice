@@ -1,6 +1,8 @@
 void setup()
 {
+	size(300,300);
 	noLoop();
+	textAlign(CENTER);
 }
 void draw()
 {
@@ -12,8 +14,10 @@ void mousePressed()
 }
 class Die //models one single dice cube
 {
-	//variable declarations here
-	Die(int x, int y) //constructor
+	int myX, myY;
+	Die(int x, int y)
+	
+
 	{
 		//variable initializations here
 	}

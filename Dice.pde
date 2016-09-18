@@ -1,63 +1,91 @@
-int result=0;
+int result;
+Die newDie;
 void setup()
 {
-	background(255);
-	size(300,300);
 	noLoop();
+	size(300,300);
 	textAlign(CENTER);
 }
+
 void draw()
 {
-	int total;
-	
-	for(int x=5;x<300;x=x+60)
+	background(0);
+	int sum=0;
+	for(int y=10;y<290;y+=40)
 	{
-		for(int y=5; y<300;y=y+60)
+		for(int x=10;x<290;x+=40)
 		{
 		Die newDie= new Die(x,y);
 		newDie.roll();
 		newDie.show();
-	}
-	result=(int)(Math.random()*6)+1);
+		sum=result+sum;
+		}
+
 	}
 }
 void mousePressed()
 {
 	redraw();
 }
-class Die //models one single dice cube
+class Die
 {
-	int myX, myY;
+	int myX, myY, sum;
 	Die(int x, int y)
-
 	{
-		roll();
+		result=(int)((Math.random()*6)+1);
+
 		myX=x;
 		myY=y;
-
-
-	}
-	
-
-	{
-		//variable initializations here
 	}
 	void roll()
 	{
-		
-	noStroke();
-	fill(0,0,255);
+
 	}
 	void show()
 	{
-		noStroke();
-		fill(0,128,255);
-		rect(myX,myY,50,50);
+		stroke(0);
 		fill(255);
-
+		rect(myX,myY,40,40);
+		fill(0);
 		if (result==1)
-			ellipse(10,10,5,5)
-
+		{
+			ellipse(myX+20,myY+20,10,10);
+		}
+		if (result==2)
+		{
+			ellipse(myX+20,myY+13,10,10);
+			ellipse(myX+20,myY+27,10,10);
+		}
+		if (result==3)
+		{
+			ellipse(myX+10,myY+10,10,10);
+			ellipse(myX+20,myY+20,10,10);
+			ellipse(myX+30,myY+30,10,10);
+		}
+		if (result==4)
+		{
+			ellipse(myX+13,myY+13,10,10);
+			ellipse(myX+13,myY+27,10,10);
+			ellipse(myX+27,myY+13,10,10);
+			ellipse(myX+27,myY+27,10,10);
+		}
+		if (result==5)
+		{
+			ellipse(myX+10,myY+10,10,10);
+			ellipse(myX+10,myY+30,10,10);
+			ellipse(myX+30,myY+10,10,10);
+			ellipse(myX+30,myY+30,10,10);
+			ellipse(myX+20,myY+20,10,10);
+		}
+		if (result==6)
+		{
+			ellipse(myX+10,myY+7,10,10);
+			ellipse(myX+10,myY+34,10,10);
+			ellipse(myX+20,myY+7,10,10);
+			ellipse(myX+20,myY+34,10,10);
+			ellipse(myX+30,myY+7,10,10);
+			ellipse(myX+30,myY+34,10,10);
+		}
 	}
-
 }
+

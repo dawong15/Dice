@@ -11,7 +11,7 @@ void draw()
 {
 	background(0);
 	int sum=0;
-	for(int y=10;y<290;y+=40)
+	for(int y=10;y<240;y+=40)
 	{
 		for(int x=10;x<290;x+=40)
 		{
@@ -22,6 +22,8 @@ void draw()
 		}
 
 	}
+	fill(255);
+	text("Sum:" +sum,270,270);
 }
 void mousePressed()
 {
